@@ -4,5 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
-int _printf(const char *format, ...);
+int _printf(const char *fmt, ...);
+int _putchar(char c);
 #endif
