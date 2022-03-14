@@ -19,7 +19,7 @@ int _printf(const char * fmt, ...)
         return(-1);
     }
     va_start(argp, fmt);
-    while(*fmt != '\0')
+    while (*fmt != '\0')
     {
         if (*fmt != '%')
         {   
@@ -40,9 +40,10 @@ int _printf(const char * fmt, ...)
                 for (i = 0; i < strlen(ch); i++)
                     _putchar(ch[i]);
             }
-            else if (*fmt== 'd')
+            else if (*fmt == 'd')
             {
              l = va_arg(argp, int);
+
             }
             else if (*fmt == '%')
             {
@@ -51,6 +52,5 @@ int _printf(const char * fmt, ...)
             fmt++;
         }
     }
-    _putchar ('\n');
     return (strlen(fmt));
 }
