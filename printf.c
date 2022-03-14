@@ -13,6 +13,7 @@ int _printf(const char * fmt, ...)
     char l;
     char *ch;
     va_list argp;
+
     if (fmt == NULL || fmt[0] == '\0')
     {
         return(-1);
@@ -22,7 +23,7 @@ int _printf(const char * fmt, ...)
     {
         if (*fmt != '%')
         {   
-        putchar(*fmt);
+        _putchar(*fmt);
         fmt++;
         }
         else
@@ -31,13 +32,13 @@ int _printf(const char * fmt, ...)
             if (*fmt == 'c')
             {
                 l = va_arg(argp, int);
-                putchar(l);
+                _putchar(l);
             }
             else if (*fmt == 's')
             {
                 ch = va_arg(argp, char*);
                 for (i = 0; i < strlen(ch); i++)
-                    putchar(ch[i]);
+                    _putchar(ch[i]);
             }
             else if (*fmt== 'd')
             {
@@ -45,11 +46,11 @@ int _printf(const char * fmt, ...)
             }
             else if (*fmt == '%')
             {
-                putchar('%');
+                _putchar('%');
             }
             fmt++;
         }
     }
-    putchar ('\n');
+    _putchar ('\n');
     return (strlen(fmt));
 }
