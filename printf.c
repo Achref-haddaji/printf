@@ -10,6 +10,7 @@
 int _printf(const char * fmt, ...)
 {
     unsigned int i;
+    int count = 0 ;
     char l;
     char *ch;
     va_list argp;
@@ -19,10 +20,11 @@ int _printf(const char * fmt, ...)
         return(-1);
     }
     va_start(argp, fmt);
-    while(*fmt != '\0')
+    while (*fmt)
     {
         if (*fmt != '%')
         {   
+        count++;
         _putchar(*fmt);
         fmt++;
         }
@@ -32,17 +34,28 @@ int _printf(const char * fmt, ...)
             if (*fmt == 'c')
             {
                 l = va_arg(argp, int);
+                count ++;
                 _putchar(l);
             }
             else if (*fmt == 's')
             {
                 ch = va_arg(argp, char*);
                 for (i = 0; i < strlen(ch); i++)
+                {
+                    count ++;
                     _putchar(ch[i]);
+                }   
             }
-            else if (*fmt== 'd')
+            else if (*fmt == 'd' )
             {
              l = va_arg(argp, int);
+             count+= _printnumber(l);
+
+            }
+            else if (*fmt == 'i' )
+            {
+             l = va_arg(argp, int);
+             count += _printnumber(l);
             }
             else if (*fmt == '%')
             {
@@ -51,6 +64,8 @@ int _printf(const char * fmt, ...)
             fmt++;
         }
     }
-    _putchar ('\n');
-    return (strlen(fmt));
+    va_end (argp);
+    return (count);
+
 }
+
