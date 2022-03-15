@@ -9,7 +9,6 @@
  */
 int _printf(const char * fmt, ...)
 {
-    unsigned int i;
     int count = 0 ;
     char l;
     int o;
@@ -41,18 +40,7 @@ int _printf(const char * fmt, ...)
             else if (*fmt == 's')
             {
                 ch = va_arg(argp, char*);
-                if (ch == NULL)
-                {
-                    ch = "(null)";
-                }
-                else
-                {
-                for (i = 0; i < strlen(ch); i++)
-                {
-                    count ++;
-                    _putchar(ch[i]);
-                }
-                }   
+                count += printstring(ch);
             }
             else if (*fmt == 'd')
             {
