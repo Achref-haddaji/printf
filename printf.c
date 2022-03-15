@@ -9,7 +9,7 @@
  */
 int _printf(const char *fmt, ...)
 {
-<<<<<<< HEAD
+
 unsigned int i;
 int count = 0;
 char l;
@@ -66,8 +66,8 @@ va_list argp;
 	}
 	va_end (argp);
 	return (count);
-=======
     unsigned int i;
+
     int count = 0 ;
     char l;
     int o;
@@ -99,18 +99,7 @@ va_list argp;
             else if (*fmt == 's')
             {
                 ch = va_arg(argp, char*);
-                if (ch == NULL)
-                {
-                    ch = "(null)";
-                }
-                else
-                {
-                for (i = 0; i < strlen(ch); i++)
-                {
-                    count ++;
-                    _putchar(ch[i]);
-                }
-                }   
+                count += printstring(ch);
             }
             else if (*fmt == 'd')
             {
@@ -132,7 +121,4 @@ va_list argp;
     }
     va_end (argp);
     return (count);
->>>>>>> 84bafbbe38fa9c3e9c55ff0e554f10d755bb3fc2
 }
-
-

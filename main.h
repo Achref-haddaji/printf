@@ -6,5 +6,6 @@
 #include <stdarg.h>
 int _printf(const char *f, ...);
 int _putchar(char c);
+int printstring(char *ch);
 int _printnumber(int l);
 #endif
