@@ -19,7 +19,7 @@ int _printf(const char * fmt, ...)
         return(-1);
     }
     va_start(argp, fmt);
-    while (*fmt != '\0')
+    while (*fmt)
     {
         if (*fmt != '%')
         {   
@@ -43,7 +43,7 @@ int _printf(const char * fmt, ...)
             else if (*fmt == 'd')
             {
              l = va_arg(argp, int);
-
+               printnumber(l);
             }
             else if (*fmt == '%')
             {
