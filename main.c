@@ -2,13 +2,8 @@
 #include <stdio.h>
 #include "main.h"
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
 int main(void)
 {
-    _printf("sum = %d", 20);
-    return(1);
+  _printf("integer %d\n", -1220);
+  return(1);
 }
