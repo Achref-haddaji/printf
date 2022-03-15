@@ -10,7 +10,7 @@
 int _printf(const char * fmt, ...)
 {
     unsigned int i;
-    int count ;
+    int count = 0 ;
     char l;
     char *ch;
     va_list argp;
@@ -24,6 +24,7 @@ int _printf(const char * fmt, ...)
     {
         if (*fmt != '%')
         {   
+        count++;
         _putchar(*fmt);
         fmt++;
         }
