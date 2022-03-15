@@ -41,19 +41,26 @@ int _printf(const char * fmt, ...)
             else if (*fmt == 's')
             {
                 ch = va_arg(argp, char*);
+                if (ch == NULL)
+                {
+                    ch = "(null)";
+                }
+                else
+                {
                 for (i = 0; i < strlen(ch); i++)
                 {
                     count ++;
                     _putchar(ch[i]);
+                }
                 }   
             }
-            else if (*fmt == 'd' )
+            else if (*fmt == 'd')
             {
              o = va_arg(argp, int);
              count+= _printnumber(o);
 
             }
-            else if (*fmt == 'i' )
+            else if (*fmt == 'i')
             {
              o = va_arg(argp, int);
              count+= _printnumber(o);
@@ -67,6 +74,5 @@ int _printf(const char * fmt, ...)
     }
     va_end (argp);
     return (count);
-
 }
 
