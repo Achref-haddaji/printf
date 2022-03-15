@@ -75,4 +75,3 @@ int _printf(const char * fmt, ...)
     va_end (argp);
     return (count);
 }
-
