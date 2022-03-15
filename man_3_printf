@@ -1,4 +1,5 @@
-_printf					
+ man 3 " mars 2022" "_printf man page"
+
 	NAME :		_printf :     format and print data
 						       ("print formatted")
 	Type :	Command	
@@ -6,28 +7,7 @@ _printf
 --help display this help and exit
 
 --version
-output version information and exit	
-
-				Naturally Special Characters :
-
-\ escape the next character
-\\ print a backslash
-" start or end of string
-\" print a double quote
-’ start or end a character constant
-\’ print a single quote
-% start a format specification
-\% print a percent sign			   
-
-				 Alternately Special Characters
-
-\a audible alert (bell)
-\b backspace
-\f form feed
-\n newline (linefeed)
-\r carriage return
-\t tab
-\v vertical tab		
+output version information and exit		
 
 					 Percent 
 
@@ -42,4 +22,27 @@ output version information and exit
 %u print an unsigned decimal (base 10) number
 %x print a number in hexidecimal (base 16)
 %% print a percent sign (\% also works)			
-		 	 
+
+		Example:
+To use the _printf function you simply need to compile all files .c including the header main.h with a main function.
+
+main.c
+#include "main.h"
+
+int main(void)
+   {
+		     _printf("let's print something using our function!");
+
+   return (0);
+    }
+
+Compilation:
+	   $ gcc *.c -o
+
+Output:
+let's print something using our function!
+
+
+						Copyright by :
+	Haddaji Achref 
+	Raddadi Abdelkader
