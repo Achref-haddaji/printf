@@ -4,6 +4,6 @@
 
 int main(void)
 {
-  _printf("%d < %d ...\n", 999, 13);
+  _printf("integer %d\n", -1220);
   return(1);
 }

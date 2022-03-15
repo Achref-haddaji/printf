@@ -10,10 +10,9 @@
 int _printf(const char * fmt, ...)
 {
     unsigned int i;
-    unsigned int x;
-    int  rest = 1;
     int count = 0 ;
     char l;
+    int o;
     char *ch;
     va_list argp;
 
@@ -50,48 +49,14 @@ int _printf(const char * fmt, ...)
             }
             else if (*fmt == 'd' )
             {
-             l = va_arg(argp, int);
-             x = l;
-                if (l < 0)
-                {
-                    _putchar('-');
-                    x = -x;
-                    count++;
-                }
-            while ((x / rest) > 9)
-            {
-                rest = rest * 10;
-            }
-            while (rest > 0)
-            {
-                _putchar(x / rest + '0');
-                x =(x % rest);
-                rest = rest / 10;
-                count++;
-            }
+             o = va_arg(argp, int);
+             count+= _printnumber(o);
+
             }
             else if (*fmt == 'i' )
             {
-             l = va_arg(argp, int);
-             
-                x = l;
-                if (l < 0)
-                {
-                    _putchar('-');
-                    x = -x;
-                    count++;
-                }
-            while ((x / rest) > 9)
-            {
-                rest = rest * 10;
-            }
-            while (rest > 0)
-            {
-                _putchar(x / rest + '0');
-                x =(x % rest);
-                rest = rest / 10;
-                count++;
-            }
+             o = va_arg(argp, int);
+             count+= _printnumber(o);
             }
             else if (*fmt == '%')
             {
