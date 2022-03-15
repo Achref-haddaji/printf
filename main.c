@@ -8,9 +8,7 @@
  * Return: Always 0
  */
 int main(void)
-
 {
-printf("%k\n");
-_printf("%k\n");
-return(1); 
+    _printf("sum = %d", 20);
+    return(1);
 }
