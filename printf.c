@@ -49,6 +49,13 @@ int _printf(const char * fmt, ...)
             else if (*fmt == 'd' )
             {
              l = va_arg(argp, int);
+             count+= _printnumber(l);
+
+            }
+            else if (*fmt == 'i' )
+            {
+             l = va_arg(argp, int);
+             count += _printnumber(l);
             }
             else if (*fmt == '%')
             {
@@ -61,3 +68,4 @@ int _printf(const char * fmt, ...)
     return (count);
 
 }
+
