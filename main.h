@@ -6,4 +6,5 @@
 #include <stdarg.h>
 int _printf(const char *fmt, ...);
 int _putchar(char c);
+int printnumber(int n);
 #endif
