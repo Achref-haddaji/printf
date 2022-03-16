@@ -14,7 +14,6 @@ int _printf(const char * fmt, ...)
     int o;
     char *ch;
     va_list argp;
-
     if (fmt == NULL || fmt[0] == '\0')
     {
         return(-1);
@@ -23,7 +22,7 @@ int _printf(const char * fmt, ...)
     while (*fmt)
     {
         if (*fmt != '%')
-        {   
+        {
         count++;
         _putchar(*fmt);
         fmt++;
@@ -46,7 +45,6 @@ int _printf(const char * fmt, ...)
             {
              o = va_arg(argp, int);
              count+= _printnumber(o);
-
             }
             else if (*fmt == 'i')
             {

@@ -7,18 +7,14 @@ int _printnumber(int n)
     if (n < 0)
     {
         _putchar('-');
-        x = -n;
+        x = -x;
         count++;
-    }
-    else 
-    {
-        x = n;
     }
     while ((x / rest) > 9)
     {
         rest = rest * 10;
     }
-    while (rest != 0)
+    while (rest > 0)
     {
         _putchar(x / rest + '0');
         x = (x % rest);
@@ -27,3 +23,12 @@ int _printnumber(int n)
     }
     return (count);
 }
+
+
+
+
+
+
+
+
+
