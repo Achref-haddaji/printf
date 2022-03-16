@@ -56,6 +56,7 @@ int _printf(const char * fmt, ...)
             else if (*fmt == '%')
             {
                 _putchar('%');
+                count++;
             }
             fmt++;
         }
